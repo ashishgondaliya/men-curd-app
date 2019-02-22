@@ -1,0 +1,13 @@
+extends AppLayout
+
+block PageContent
+
+    h1= article.title
+    h5= article.content
+    p Writen by #{article.author}
+    //p Writen by #{author}
+
+    hr
+    
+    a.btn.btn-default(href='/article/edit/' + article._id) Edit
+    a.btn.btn-danger.delete_article(href="#!", data-id=article._id) Delete

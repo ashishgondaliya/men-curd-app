@@ -1,0 +1,14 @@
+extends AppLayout
+
+block PageContent
+
+    h1 #{page_title}
+
+    ul.list-group
+        each article, i in defaultArticle
+            li.list-group-item
+                a(href="/article/" + article.id)= article.title
+
+        each article, i in articles
+            li.list-group-item
+                a(href="/article/" + article._id)= article.title

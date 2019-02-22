@@ -1,0 +1,33 @@
+doctype html
+html
+    head
+        title Knowledge Base
+    body
+        a.nav-link(href="/") Knowledge Base
+        a.nav-link(href="/article/add_article") Add Article
+        a.nav-link(href="/user/login") Login
+        a.nav-link(href="/user/register") Register
+        if user
+            a.nav-link(href="/user/logout") Logout
+
+        .container  
+
+            != messages('MessageLayout', locals)
+            if errors
+                each error, i in errors
+                    div(class="alert alert-danger") #{error.msg}
+
+
+            block PageContent
+            
+            hr
+            
+            footer
+                p Copyright &copy; 2018        
+
+
+    //jQuery from bower is throwing Error: "'define' is not defined".
+    //script(src="/bower_components/jquery/src/jquery.js")
+
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js")
+    script(src="/custom.js")

@@ -1,0 +1,16 @@
+extends AppLayout
+
+block PageContent
+
+    h1 Add Article
+    form(method="POST", action="/article/save_article")
+        #some-id
+            label Title:
+            input.someClass(name="title", type="text")
+        #some-id
+            label Author:
+            input.someClass(name="author", type="text")
+        #some-id
+            label Message:
+            textarea.someClass(name="content")
+        input.someClass(type="submit", value="submit")
